@@ -25,7 +25,8 @@
         <aspectj.version>1.8.6</aspectj.version>
         <commons.fileupload.version>1.4</commons.fileupload.version>
         <jackson.version>2.9.10</jackson.version>
-        <log4j.version>1.2.17</log4j.version>
+<!--        <log4j.version>1.2.17</log4j.version>-->
+        <log4j.version>2.10.0</log4j.version>
         <slf4j.version>1.7.7</slf4j.version>
         <lombok.version>1.18.10</lombok.version>
     </properties>
@@ -158,9 +159,27 @@
             <version>${mysql.connector.version}</version>
         </dependency>
 
-        <dependency>
+        <!--spring5.x之后的版本废弃log4j-->
+        <!--<dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
             <version>${log4j.version}</version>
         </dependency>
 
